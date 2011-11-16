@@ -11,3 +11,16 @@ gem "bson_ext"
 gem "embedly"
 gem "sinatra"
 gem "unicorn"
+
+group :development, :test do
+  gem 'turn', :require => false
+  gem "heroku", :require => false
+  gem "awesome_print"
+  gem "heroku_deployment", :require => false
+  gem "git_remote_branch", :require => false
+  gem 'foreman', :require => false
+
+  gem "rspec"
+  gem "guard-rspec"
+  gem "rb-fsevent", :require => false
+end
