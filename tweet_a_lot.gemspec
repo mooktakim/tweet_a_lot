@@ -16,7 +16,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = TweetALot::VERSION
 
-  %w(rspec bundler jeweler rcov guard guard-rspec rb-fsevent thin).each do |g|
+  %w(rspec bundler jeweler rcov guard guard-rspec rb-fsevent).each do |g|
     gem.add_development_dependency g
   end
 
@@ -27,5 +27,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency "bson_ext"
   gem.add_dependency "embedly"
   gem.add_dependency "sinatra"
+  gem.add_dependency "unicorn"
 
 end

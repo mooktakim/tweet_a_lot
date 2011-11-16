@@ -12,14 +12,18 @@ module TweetALot
       increment(:score => i)
     end
 
-    def self.print_score_board
-      puts "\n", "="*40
-      puts "PLAYER\t\t\tSCORE"
-      puts "-"*40
+    def self.score_board
+      text = ["="*40, "PLAYER\t\t\tSCORE", "-"*40]
       sort(:score.desc).all.each do |p|
-        puts "#{p.screen_name}\t\t#{p.score}"
+        text << "#{p.screen_name}\t\t#{p.score}"
       end
-      puts "="*40
+      text << "="*40
+      text.join("\n")
+    end
+
+    def self.print_score_board
+      puts "\n"
+      puts score_board
     end
 
   end

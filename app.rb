@@ -2,5 +2,6 @@ require 'sinatra'
 require 'tweet_a_lot'
 
 get '/' do
-  "Hello World!"
+  content_type :text
+  TweetALot::Player.score_board
 end
