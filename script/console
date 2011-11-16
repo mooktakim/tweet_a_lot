@@ -1,0 +1,1 @@
+irb -rubygems -I lib -r tweet_a_lot

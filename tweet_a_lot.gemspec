@@ -16,11 +16,16 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = TweetALot::VERSION
 
-  %w(rspec bundler jeweler rcov guard guard-rspec rb-fsevent).each do |g|
+  %w(rspec bundler jeweler rcov guard guard-rspec rb-fsevent thin).each do |g|
     gem.add_development_dependency g
   end
 
+  gem.add_dependency "rails" # only need DateTime#parse need to figure out what specific gem i need
   gem.add_dependency "tweetstream"
   gem.add_dependency "yajl-ruby" #, :require => 'yajl'
+  gem.add_dependency "mongo_mapper"
+  gem.add_dependency "bson_ext"
+  gem.add_dependency "embedly"
+  gem.add_dependency "sinatra"
 
 end
