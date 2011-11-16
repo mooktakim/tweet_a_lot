@@ -16,7 +16,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = TweetALot::VERSION
 
-  %w(rspec bundler jeweler rcov guard guard-rspec rb-fsevent).each do |g|
+  %w(rspec bundler jeweler rcov guard guard-rspec rb-fsevent turn heroku awesome_print heroku_deployment git_remote_branch foreman).each do |g|
     gem.add_development_dependency g
   end
 
