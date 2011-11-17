@@ -1,5 +1,5 @@
 render_scoreboard = (data) ->
-  $('#scoreboard').replaceWith(JST['scoreboard']({players: data}))
+  $('#container').html(JST['scoreboard']({players: data}))
 
 load_json = ->
   console.log('Loading json')
