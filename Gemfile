@@ -20,6 +20,8 @@ gem "inherited_resources", "~> 1.2.2"
 gem "haml-rails", "~> 0.3.4"
 
 gem 'dalli'
+gem 'rack-cache', :require => 'rack/cache'
+gem 'keytar'
 
 gem "mongo_mapper", "~> 0.9.2"
 gem "bson_ext", "~> 1.3"
@@ -27,6 +29,7 @@ gem "bson_ext", "~> 1.3"
 gem "tweetstream"
 gem "yajl-ruby" #, :require => 'yajl'
 gem "embedly"
+gem 'handlebars_assets'
 
 group :development, :test do
   gem 'turn', :require => false

@@ -1,3 +1,10 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+render_scoreboard = (data) ->
+  $('#scoreboard').replaceWith(JST['scoreboard']({players: data}))
+
+load_json = ->
+  console.log('Loading json')
+  $.getJSON('/scores.json', render_scoreboard)
+
+jQuery ->
+  load_json()
+  setInterval(load_json, 3000)

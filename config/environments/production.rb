@@ -59,4 +59,8 @@ TweetALot::Application.configure do
   config.active_support.deprecation = :notify
 
   config.cache_store = :dalli_store
+  config.middleware.use 'Rack::Cache', {
+    :metastore   => Dalli::Client.new(nil, :namespace => "rack-cache/key"),
+    :entitystore => Dalli::Client.new(nil, :namespace => "rack-cache/body")
+  }
 end

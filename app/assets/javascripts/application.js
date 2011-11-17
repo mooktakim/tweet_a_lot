@@ -6,4 +6,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require handlebars.vm
 //= require_tree .

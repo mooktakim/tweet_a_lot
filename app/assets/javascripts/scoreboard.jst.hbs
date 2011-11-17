@@ -1,0 +1,21 @@
+<table id="scoreboard">
+  <thead>
+    <tr>
+      <th>Player</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each players}}
+    <tr class="player" id="player_{{id}}">
+      <td class="name">
+        <a href="http://twitter.com/{{screen_name}}" target="_blank">
+          <img src="{{profile_image_url}}" alt=""/><br/>
+          {{screen_name}}
+        </a>
+      </td>
+      <td class="score">{{score}}</td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
