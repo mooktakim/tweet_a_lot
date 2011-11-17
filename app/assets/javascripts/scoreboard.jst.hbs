@@ -1,6 +1,7 @@
 <table id="scoreboard">
   <thead>
     <tr>
+      <th>&nbsp;</th>
       <th>Player</th>
       <th>Score</th>
     </tr>
@@ -8,6 +9,7 @@
   <tbody>
   {{#each players}}
     <tr class="player" id="player_{{id}}">
+      <td class="name">{{position}}</td>
       <td class="name">
         <a href="http://twitter.com/{{screen_name}}" target="_blank">
           <img src="{{profile_image_url}}" alt=""/><br/>

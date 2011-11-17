@@ -34,9 +34,7 @@ class Player
   private
 
   def clear_cache
-    Rails.cache.write(self.class.scores_key, self.class.scores.all.to_json)
-    # Rails.cache.clear
-    # Rails.cache.write(self.class.etag_key, SecureRandom.hex(10))
+    Rails.cache.delete(self.class.scores_key)
   end
 
 end
