@@ -1,16 +1,7 @@
 #!/usr/bin/env rake
-require "bundler/gem_tasks"
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
-dir = File.expand_path(File.join(File.dirname(__FILE__), 'lib'))
-$LOAD_PATH.unshift(dir) unless $LOAD_PATH.include?(dir)
+require File.expand_path('../config/application', __FILE__)
 
-require 'tweet_a_lot'
-
-namespace :tweet_a_lot do
-
-  desc "Listen to the Twitter stream"
-  task :stream do
-    TweetALot::Stream.new(['#HumanWrites' '#HumanWrites2' '#HumanWritesII']).run
-  end
-
-end
+TweetALot::Application.load_tasks
