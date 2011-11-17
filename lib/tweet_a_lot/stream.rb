@@ -13,6 +13,7 @@ module TweetALot
     end
 
     def run
+      puts "TweetALot::Stream started - #{Time.now}"
       client.track(*keywords) do |status, cclient|
         puts "#{status.inspect}"
         puts "="*100
