@@ -14,13 +14,16 @@ class TwitterStream
   def run
     puts "Stream started - #{Time.now}"
     client.track(*keywords) do |status, cclient|
-      # puts "#{status.inspect}"
-      # puts "="*100
-      # if tweet = TweetMessage.create_from_hash(status)
-      #   tweet.pretty_print
-      #   Player.print_score_board
-      # end
-      TweetMessage.create_from_hash(status)
+      if Rails.env.development?
+        # puts "#{status.inspect}"
+        puts "="*100
+        if tweet = TweetMessage.create_from_hash(status)
+          tweet.pretty_print
+          Player.print_score_board
+        end
+      else
+        TweetMessage.create_from_hash(status)
+      end
     end
   end
 

@@ -14,7 +14,7 @@ class Player
   def add_score(i = 1)
     increment(:score => i)
     reload
-    clear_cache
+    Player.clear_cache
   end
 
   def self.score_board
@@ -31,10 +31,8 @@ class Player
     puts score_board
   end
 
-  private
-
-  def clear_cache
-    Rails.cache.delete(self.class.scores_key)
+  def self.clear_cache
+    Rails.cache.delete(Player.scores_key)
   end
 
 end
