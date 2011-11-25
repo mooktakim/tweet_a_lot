@@ -15,7 +15,7 @@ class TwitterStream
     puts "Stream started - #{Time.now}"
     client.track(*keywords) do |status, cclient|
       if Rails.env.development?
-        # puts "#{status.inspect}"
+        puts "#{status.inspect}"
         puts "="*100
         if tweet = TweetMessage.create_from_hash(status)
           tweet.pretty_print

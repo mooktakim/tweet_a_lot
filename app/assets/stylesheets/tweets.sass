@@ -1,0 +1,56 @@
+.tweets
+  width: 540px
+  background-color: #FAFAFA
+  font: 13px/1.5 Helvetica Neue,Arial,Helvetica,'Liberation Sans',FreeSans,sans-serif
+  float: left
+  display: inline-block
+  -webkit-border-radius: 5px
+  -moz-border-radius: 5px
+  border-radius: 5px
+  box-shadow: 0 3px 4px rgba(0,0,0,.5)
+  -moz-box-shadow: 0 3px 4px rgba(0,0,0,.5)
+  -webkit-box-shadow: 0 3px 4px rgba(0,0,0,.5)
+  border-right: 1px solidid #EEE
+  .tweet
+    padding: 10px 20px
+    font-size: 15px
+    color: #444
+    position: relative
+    border-bottom: 1px solid #EBEBEB
+    min-height: 60px
+    clear: both
+    display: block
+    outline: none
+    .tweet-image
+      float: left
+      height: 48px
+      overflow: hidden
+      width: 48px
+      margin-top: 3px
+    .tweet-content
+      margin-left: 58px
+      min-height: 48px
+      .tweet-row
+        display: block
+        position: relative
+        line-height: 15px
+        .tweet-screen-name
+          font-weight: bold
+          color: #333
+          text-decoration: none
+          &:hover
+            color: #0084B4
+            text-decoration: underline
+        .tweet-full-name
+          color: #999
+          font-size: 12px
+        .tweet-text
+          padding: 0
+          font-family: Arial,"Helvetica Neue",sans-serif
+          line-height: 19px
+          word-wrap: break-word
+          a
+            color: #0084B4
+            text-decoration: none
+            &:hover
+              text-decoration: underline

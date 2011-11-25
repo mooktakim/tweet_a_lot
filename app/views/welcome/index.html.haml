@@ -1,4 +1,6 @@
 %h1 Tweet-a-lot Competition!
 %h3 Send out lots of tweets for your chance to win prizes!
 
+= render :partial => "welcome/tweets", :locals => {:tweets => TweetMessage.sort(:_id.desc).limit(20).all}
+
 #container Loading...

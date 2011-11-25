@@ -1,0 +1,12 @@
+.tweets
+  - tweets.each do |tweet|
+    - user = tweet.user
+    .tweet
+      .tweet-image= image_tag user.profile_image_url, :alt => user.screen_name, :height => "48", :width => "48", :"data-user-id" => user.twitter_id.to_s
+      .tweet-content
+        .tweet-row
+          %span.tweet-user-name
+            = link_to user.screen_name, "http://twitter.com/#{user.screen_name}", :class => "tweet-screen-name user-profile-link js-action-profile-name", :"data-user-id" => user.twitter_id.to_s
+            %span.tweet-full-name= user.name
+        .tweet-row
+          .tweet-text.js-tweet-text= display_tweet(tweet.message)

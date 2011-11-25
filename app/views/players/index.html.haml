@@ -1,0 +1,17 @@
+%h1 List of all players participating in the competition
+
+%table#scoreboard
+  %thead
+    %tr
+      %th &nbsp;
+      %th Player
+      %th Score
+  %tbody
+  - collection.each_with_index do |player, i|
+    %tr.player{:id => "player_#{player.id}"}
+      %td.position= i+1
+      %td.name
+        = link_to player do
+          = image_tag player.profile_image_url, :alt => ""
+          = player.screen_name
+      %td.score= player.score

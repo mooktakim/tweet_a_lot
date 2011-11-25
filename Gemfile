@@ -30,6 +30,7 @@ gem "tweetstream"
 gem "yajl-ruby" #, :require => 'yajl'
 gem "embedly"
 gem 'handlebars_assets'
+gem "rails_autolink", "~> 1.0.4"
 
 group :development, :test do
   gem 'turn', :require => false

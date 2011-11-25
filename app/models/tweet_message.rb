@@ -5,6 +5,7 @@ class TweetMessage
   one :user, :class_name => "User"
 
   key :twitter_id, Integer
+  key :user_twitter_id, Integer
   key :message, String
   key :created_at, Time
   key :urls, Array
@@ -24,6 +25,7 @@ class TweetMessage
       player = Player.create(
         :twitter_id => u.twitter_id,
         :screen_name => u.screen_name,
+        :name => u.name,
         :profile_image_url => u.profile_image_url
       )
     end
@@ -46,9 +48,11 @@ class TweetMessage
     t.message = hash[:text]
     t.orig_tweet = orig_tweet
     t.created_at = (DateTime.parse(hash[:created_at]).to_time) rescue nil
+    t.user_twitter_id = hash[:user][:id]
     t.user = User.new(
       :twitter_id => hash[:user][:id],
       :screen_name => hash[:user][:screen_name],
+      :name => hash[:user][:name],
       :profile_image_url => hash[:user][:profile_image_url],
       :followers_count => hash[:user][:followers_count],
       :friends_count => hash[:user][:friends_count]

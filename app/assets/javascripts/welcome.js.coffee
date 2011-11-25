@@ -18,5 +18,6 @@ has_changed = (data) ->
   old_hash != new_hash
 
 jQuery ->
-  load_json()
-  setInterval(load_json, 3000)
+  if($('#container').length != 0)
+    load_json()
+    setInterval(load_json, 3000)

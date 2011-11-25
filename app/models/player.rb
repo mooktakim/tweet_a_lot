@@ -5,6 +5,7 @@ class Player
 
   key :twitter_id, Integer
   key :screen_name, String
+  key :name, String
   key :profile_image_url, String
   key :score, Integer, :default => 0
   scope :scores, sort(:score.desc).limit(20)

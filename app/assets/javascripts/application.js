@@ -7,4 +7,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require handlebars.vm
+//= require jquery.embedly.min
 //= require_tree .

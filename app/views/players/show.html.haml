@@ -1,0 +1,6 @@
+%h1
+  = link_to "http://twitter.com/#{resource.screen_name}" do
+    = image_tag resource.profile_image_url, :alt => ""
+  #{resource.screen_name} tweets
+
+= render :partial => "welcome/tweets", :locals => {:tweets => TweetMessage.sort(:_id.desc).where(:user_twitter_id => resource.twitter_id).all}
