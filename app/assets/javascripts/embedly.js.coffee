@@ -1,2 +1,2 @@
 jQuery ->
-  $('.tweet a').embedly({maxWidth:600})
+  $('.tweet .tweet-text a').embedly({maxWidth:600})

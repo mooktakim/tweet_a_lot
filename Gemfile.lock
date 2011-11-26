@@ -236,6 +236,9 @@ GEM
     yajl-ruby (1.1.0)
     yui-compressor (0.9.6)
       POpen4 (>= 0.1.4)
+    zurb-foundation (2.1.0)
+      jquery-rails (~> 1.0)
+      rails (~> 3.1.0)
 
 PLATFORMS
   ruby
@@ -277,3 +280,4 @@ DEPENDENCIES
   uglifier (>= 1.0.3)
   unicorn
   yajl-ruby
+  zurb-foundation

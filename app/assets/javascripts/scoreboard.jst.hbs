@@ -1,23 +1,20 @@
-<table id="scoreboard">
-  <thead>
-    <tr>
-      <th>&nbsp;</th>
-      <th>Player</th>
-      <th>Score</th>
-    </tr>
-  </thead>
-  <tbody>
-  {{#each players}}
-    <tr class="player" id="player_{{id}}">
-      <td class="position">{{position}}</td>
-      <td class="name">
-        <a href="{{url}}">
-          <img src="{{profile_image_url}}" alt=""/><br/>
-          {{screen_name}}
-        </a>
-      </td>
-      <td class="score">{{score}}</td>
-    </tr>
-  {{/each}}
-  </tbody>
-</table>
+<div id="scoreboard">
+{{#each players}}
+  <div class="player">
+    <div class="position">{{position}}</div>
+    <div class="image">
+      <a class="screen-name user-profile-link js-action-profile-name" href="{{url}}">
+        <img src="{{profile_image_url}}" alt=""/>
+      </a>
+    </div>
+    <div class="content">
+      <div class="line">
+        <a class="screen-name" href="http://twitter.com/{{screen_name}}">{{screen_name}}</a>
+      </div>
+      <div class="line">
+        <div class="score">{{score}} points</div>
+      </div>
+    </div>
+  </div>
+{{/each}}
+</div>

@@ -1,0 +1,30 @@
+!!! 5
+-ie_html :lang => 'en', :class => 'no-js', 'xml:lang' => 'en', 'xmlns' => 'http://www.w3.org/1999/xhtml', 'xmlns:fb' => 'https://www.facebook.com/2008/fbml' do
+  %head= render :partial => "layouts/html_head"
+  %body.application
+    .container
+      %header#header.row
+        %h2.twelve.columns= link_to(image_tag("text_logo.jpg", :alt => "Restless Beings"), 'http://www.restlessbeings.org/', :rel => "home")
+      #rules.reveal-modal
+        %h2 Tweet, earn points, win a prize!
+        %p.lead Participate by including #HumanWrites in all your tweets!
+        %p More you tweet, more points you earn! (Tip: retweets earn you bonus points!)
+        %ul
+          %li
+            %strong 1 point for tweet
+          %li
+            %strong 2 points for tweet with restlessbeings.org url
+          %li
+            %strong 5 points for picture tweet
+          %li
+            %strong 10 points for video tweet
+        %p
+          %strong BONUS:
+          earn additional <strong>10 points</strong> if any of your tweets get retweeted!
+        %p The challenge will run the entire weekend (end midnight Sunday).
+        %p Prize will be a Restless Beings goody bag!
+        %a.close-reveal-modal &#215
+      %section#content= yield
+      %footer.row
+        %p.twelve.columns= page_footer
+    = render :partial => 'layouts/javascripts'

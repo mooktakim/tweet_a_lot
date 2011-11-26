@@ -1,6 +1,28 @@
-%h1 Tweet-a-lot Competition!
-%h3 Send out lots of tweets for your chance to win prizes!
+.row
+  %h1.seven.columns Tweet-a-lot Competition!
+  %p.five.columns= link_to "Competition rules &raquo;".html_safe, '#', :class => "large blue nice button radius", :"data-reveal-id" => "rules"
+#rules.reveal-modal
+  %h2 Tweet, earn points, win a prize!
+  %p.lead Participate by including #HumanWrites in all your tweets!
+  %p More you tweet, more points you earn! (Tip: retweets earn you bonus points!)
+  %ul
+    %li
+      %strong 1 point for tweet
+    %li
+      %strong 2 points for tweet with restlessbeings.org url
+    %li
+      %strong 5 points for picture tweet
+    %li
+      %strong 10 points for video tweet
+  %p
+    %strong BONUS:
+    earn additional <strong>10 points</strong> if any of your tweets get retweeted!
+  %p The challenge will run the entire weekend (end midnight Sunday).
+  %p Prize will be a Restless Beings goody bag!
+  %a.close-reveal-modal &#215
 
-= render :partial => "welcome/tweets", :locals => {:tweets => TweetMessage.sort(:_id.desc).limit(20).all}
-
-#container Loading...
+.row
+  .seven.columns
+    = render :partial => "welcome/tweets", :locals => {:tweets => TweetMessage.sort(:_id.desc).limit(20).all}
+  .five.columns
+    #score_container Loading...
