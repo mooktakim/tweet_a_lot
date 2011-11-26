@@ -1,7 +1,12 @@
 class WelcomeController < ApplicationController
 
   def index
-    # expires_in 1.hours, :public => true
+    expires_in 5.minutes, :public => true
+  end
+
+  def recent
+    expires_in 5.seconds
+    render :partial => "welcome/tweets", :locals => {:tweets => TweetMessage.sort(:_id.desc).limit(20).all}, :layout => false
   end
 
   def scores

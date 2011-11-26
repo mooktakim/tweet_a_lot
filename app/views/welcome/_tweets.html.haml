@@ -1,7 +1,7 @@
 .tweets
   - tweets.each do |tweet|
     - user = tweet.user
-    .tweet
+    .tweet{:id => tweet.id, :"data-id" => tweet.id}
       .tweet-image= image_tag user.profile_image_url, :alt => user.screen_name, :height => "48", :width => "48", :"data-user-id" => user.twitter_id.to_s
       .tweet-content
         .tweet-row
