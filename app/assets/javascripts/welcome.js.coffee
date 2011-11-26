@@ -23,11 +23,16 @@ render_recent_tweets = (data) ->
     tweet = $(this)
     if($('#' + tweet.data('id')).length == 0)
       # console.log(tweet)
-      tweet.addClass("yellow")
-      setTimeout(() ->
-        $('#' + tweet.data('id')).removeClass("yellow")
-      , 3000)
       $(".tweets").prepend(tweet)
+      tweet.addClass("yellow").hide()
+      tweet = $('#' + tweet.data('id'))
+      setTimeout(() ->
+        tweet.fadeIn('slow', ->
+          setTimeout(() ->
+            tweet.removeClass("yellow")
+          , 10000)
+        )
+      , 1000)
   )
 
 load_tweets = ->

@@ -4,8 +4,9 @@
   %body.application
     .container
       %header#header.row
-        %h2.four.columns= link_to(image_tag("text_logo.jpg", :alt => "Restless Beings"), 'http://www.restlessbeings.org/', :rel => "home")
-        %p.eigth.columns.lead{:style => 'margin-top: 50px;'} Participate by including <strong style="color: #DA008B;">#HumanWrites</strong> in all your tweets!
+        %h2.four.columns.hide-on-phones= link_to(image_tag("text_logo.jpg", :alt => "Restless Beings"), 'http://www.restlessbeings.org/', :rel => "home")
+        %p.eigth.columns.lead.hide-on-phones{:style => 'margin-top: 50px;'} Participate by including <strong style="color: #DA008B;">#HumanWrites</strong> in all your tweets!
+        %p.eigth.columns.lead.show-on-phones{:style => 'margin-top: 10px;'} #{link_to('Restless Beings', 'http://www.restlessbeings.org/')} Tweet-a-lot Competition! <br/>Participate by including <strong style="color: #DA008B;">#HumanWrites</strong> in all your tweets!
       #rules.reveal-modal
         %h2 Tweet, earn points, win a prize!
         %p.lead Participate by including <strong style="color: #DA008B;">#HumanWrites</strong> in all your tweets!
