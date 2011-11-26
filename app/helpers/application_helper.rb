@@ -2,7 +2,7 @@ module ApplicationHelper
 
   def display_tweet(msg)
     return nil if msg.blank?
-    auto_link(msg.gsub(/#\w+/i, '<a href="https://twitter.com/#!/search?q=%23\0">\0</a>').gsub('%23#', '%23'), :link => :urls)
+    auto_link(msg.gsub(/@\w+/i, '<a href="https://twitter.com/\0">\0</a>').gsub('https://twitter.com/@', 'https://twitter.com/').gsub(/#\w+/i, '<a href="https://twitter.com/#!/search?q=%23\0">\0</a>').gsub('%23#', '%23'), :link => :urls)
   end
 
   def page_footer
