@@ -25,7 +25,7 @@ render_recent_tweets = (data) ->
       # console.log(tweet)
       tweet.css("background", "lightyellow")
       setTimeout(() ->
-        $('#' + tweet.data('id')).css("background", "white")
+        $('#' + tweet.data('id')).css("background", 'none')
       , 3000)
       $(".tweets").prepend(tweet)
   )
