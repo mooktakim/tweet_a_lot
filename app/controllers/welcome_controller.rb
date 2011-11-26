@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
   def index
-    expires_in 1.hours, :public => true
+    # expires_in 1.hours, :public => true
   end
 
   def scores
